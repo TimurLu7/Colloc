@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <vector>
 #include "Factorial.h"
 
@@ -24,12 +24,17 @@ void printFactorials(int n) {
 
 int main() {
     setlocale(LC_ALL, "rus");
-    std::cout << "Калькулятор факториалов " << std::endl;
+    int n;
+    std::cout << "Введите число n: ";
+    std::cin >> n;
 
-    printFactorials(0);
-    printFactorials(1);
-    printFactorials(5);
-    printFactorials(10);
+    if (n < 0) {
+        std::cout << "Овведите неотрицательное целое число" << std::endl;
+        return 1;
+    }
+
+    printFactorials(n);
 
     return 0;
+}
 }
